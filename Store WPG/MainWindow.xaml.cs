@@ -129,9 +129,18 @@ namespace Store_WPG
                 {
                     if (item.Id == product.Id)
                     {
+                        try
+                        {
                         item.Name = NameOfProductTxtBox.Text;
                         item.Price = double.Parse(PriceOfProductTxtBox.Text);
                         item.ImagePath = newImagePath;
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            System.Windows.MessageBox.Show( $"{ex.Message}","Something went wrong.");
+                        }
 
                     }
                 }
